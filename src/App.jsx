@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import CustomizedInputBase from './components/search.jsx'
-import Weather from "./components/WeatherCard.jsx"
+import WeatherCard from "./components/WeatherCard.jsx"
 import './App.css'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <CustomizedInputBase />
-      <Weather />
+      <WeatherCard />
     </div>
   )
 }

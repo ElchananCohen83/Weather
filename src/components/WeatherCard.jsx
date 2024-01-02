@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Day from './DayCard';
 import '../App.css';
 
-export default function Weather() {
+export default function WeatherCard() {
     const [isFilled, setIsFilled] = useState(false);
     const city = "Tel Aviv";
     const degrees = "38°";
@@ -13,7 +13,6 @@ export default function Weather() {
 
     return (
         <div className='weather_card'>
-
             <div className="city-heart">
                 <h1 className='city'>{city}</h1>
                 <svg
