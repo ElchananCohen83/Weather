@@ -4,8 +4,8 @@ const apiCity = axios.create({
   baseURL: import.meta.env.VITE_URL_API_CITY,
 });
 
-const apiLatAndLon = axios.create({
-    baseURL: import.meta.env.VITE_URL_API_LAT_LON,
+const apiCoordinate  = axios.create({
+    baseURL: import.meta.env.VITE_URL_API_COORDINATE ,
   });
 
-export {apiCity, apiLatAndLon};
+export {apiCity, apiCoordinate};

@@ -1,3 +1,5 @@
+
+
 #root, body, html {
   margin: 0;
   padding: 0;
@@ -17,8 +19,8 @@
 .weather_card {
   background-color: white;
   border-radius: 5px;
-  width: 280px;
-  height: 320px;
+  width: 270px;
+  height: 310px;
   margin: 40px auto;
   box-shadow: 1px 2px 10px #0003;
 }
@@ -31,7 +33,17 @@
   fill: red;
 }
 
-.city-heart {
+
+.formattedDate{
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+
+.city {
+  margin-bottom: 10px;
+}
+
+.formattedDate-heart {
   margin-inline: 20px;
   display: flex;
   justify-content: space-between;
@@ -58,7 +70,7 @@
 }
 
 .day {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-inline: 20px;
   display: flex;
   justify-content: space-between;

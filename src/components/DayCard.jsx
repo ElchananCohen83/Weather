@@ -1,20 +1,20 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import '../App.css';
 
-export default function Day() {
+export default function DayOfWeek({ dayOfWeek, temp_min, temp_max }) {
     return (
         <table>
             <thead>
                 <tr>
-                    <th>Tue</th>
+                    <th>{dayOfWeek}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>0.0</td>
+                    <td>{temp_min}</td>
                 </tr>
                 <tr>
-                    <td>-8.3</td>
+                    <td>{temp_max}</td>
                 </tr>
                 {/* Add more rows as needed */}
             </tbody>
