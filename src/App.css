@@ -1,4 +1,13 @@
-
+.search-component {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Adjust the width as needed */
+  max-width: 400px; /* Set a maximum width if desired */
+  box-shadow: 0 2px 5px #0003; /* Add a box shadow for a subtle effect */
+  z-index: 1000; /* Set a high z-index to ensure it appears above other elements */
+}
 
 #root, body, html {
   margin: 0;
@@ -41,6 +50,10 @@
 
 .city {
   margin-bottom: 10px;
+  color: #4aa3dd
+
+  ;
+  ;
 }
 
 .formattedDate-heart {

@@ -1,15 +1,11 @@
-import { useState } from 'react'
-import CustomizedInputBase from './components/search.jsx'
-import WeatherCard from "./components/WeatherCard.jsx"
+import Dashboard from './components/Dashboard'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
-      <CustomizedInputBase />
-      <WeatherCard />
+      <Dashboard/>
     </div>
   )
 }
