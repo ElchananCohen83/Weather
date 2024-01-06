@@ -28,7 +28,15 @@ export default function Dashboard() {
                 );
                 
                 setWeatherList(resByCoordinate.data.list);
-                console.log("weatherList", weatherList);
+
+                const existingCities = JSON.parse(localStorage.getItem("citys")) || [];
+                if (!existingCities.includes(word)) {
+                    const updatedCities = [word, ...existingCities];
+                    if (updatedCities.length > 10) {
+                        updatedCities.pop(); // Remove the last element
+                    }
+                    localStorage.setItem("citys", JSON.stringify(updatedCities));
+                }
             }
         } catch (error) {
             console.error("Error fetching weather data:", error.message);

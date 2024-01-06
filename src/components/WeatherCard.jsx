@@ -28,6 +28,18 @@ export default function WeatherCard({ weatherList, city }) {
 
     const handleClick = async () => {
         setIsFilled((prevIsFilled) => !prevIsFilled);
+
+        // Wait for setIsFilled to complete and get the updated value
+        // const updatedIsFilled =  setIsFilled;
+
+        // if (updatedIsFilled){
+        //     const existingCities = JSON.parse(localStorage.getItem("citys")) || [];
+        //     existingCities.push(city);
+        //     localStorage.setItem("citys", JSON.stringify(existingCities));
+        //     updatedIsFilled = null
+        // }else{
+        //     localStorage.removeItem("citys", city)
+        // }
     };
 
 
@@ -37,7 +49,7 @@ export default function WeatherCard({ weatherList, city }) {
                 <>
                     <div className="formattedDate-heart">
                         <p className='formattedDate'>{formattedDate}</p>
-                        <svg
+                        {/* <svg
                             className={`feather feather-heart ${isFilled ? 'heart-filled' : 'heart'}`}
                             fill="none"
                             height="24"
@@ -50,10 +62,12 @@ export default function WeatherCard({ weatherList, city }) {
                             onClick={handleClick}
                         >
                             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
+                        </svg> */}
                     </div>
 
-                    <h1 className='city'>{city}</h1>
+                    {/* <h1 className='city'>{city}</h1> */}
+                    <h1 className='city'>{weatherList ? city : 'No Data Available'}</h1>
+
 
                     <div className='degrees-image'>
                         <img
@@ -68,22 +82,22 @@ export default function WeatherCard({ weatherList, city }) {
                     </div>
 
                     <div className='day'>
-                        {weatherList && (
-                            (() => {
-                                const elements = [];
-                                for (let i = 0; i < weatherList.length; i += 8) {
-                                    elements.push(
-                                        <DayOfWeek
-                                            key={i}
-                                            dayOfWeek={new Date(weatherList[i].dt * 1000).toLocaleDateString('en-US', { weekday: 'short' })}
-                                            temp_min={Math.round(weatherList[i].main.temp_min)}
-                                            temp_max={Math.round(weatherList[i].main.temp_max)} />
-                                    );
-                                }
-                                return elements;
-                            })()
-                        )}
-                    </div></>
+                        {(() => {
+                            const elements = [];
+                            for (let i = 0; i < weatherList.length; i += 8) {
+                                elements.push(
+                                    <DayOfWeek
+                                        key={i}
+                                        dayOfWeek={new Date(weatherList[i].dt * 1000).toLocaleDateString('en-US', { weekday: 'short' })}
+                                        temp_min={Math.round(weatherList[i].main.temp_min)}
+                                        temp_max={Math.round(weatherList[i].main.temp_max)}
+                                    />
+                                );
+                            }
+                            return elements;
+                        })()}
+                    </div>
+                </>
             ) : (
                 // Display loading indicator
                 <p>Loading...</p>
